@@ -3,56 +3,60 @@
 }
 
 body {
-  margin: 0;
-  font-family: "Hiragino Kaku Gothic ProN";
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-a {
-  text-decoration: none;
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
 }
-/* container */
-.wrapper{
-    width:100%;
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+  height: 300px; /* only for demonstration, should be removed */
+  background: #ccc;
+  padding: 20px;
 }
-.wrapper.container{
-    max-width:1000px;
-    margin:0px auto;
-    padding:80px 0px;
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
 }
-/* content */
-.wrapper.content.heading{
-    margin:0px 0px 40px 0px;
-    font-size: 24px;
-    font-weight: normal;
-    text-align: center;
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #f1f1f1;
+  height: 300px; /* only for demonstration, should be removed */
 }
-@media (min-width: 992px) {
-    .wrapper.content.list {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
 }
-.wrapper.content.list-item {
-    margin:50px 0px;
-    padding:0px 50px;
-    text-align:center;
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
 }
-@media (min-width: 992px) {
-    .wrapper.content.list-item {
-        margin:0px;
-        width:calc(100% / 3);
-    }
-}
-.wrapper.content.list-item.image{
-    display:block;
-    width:５0%;
-    max-width:100px;
-    margin:0px auto 20px auto;
-    border-radius:50%;
-}
-.wrapper.content.list-item.text{
-    line-height:1.8rem;
-    font-size:0.8rem;
-    color:#666666;
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
 }
